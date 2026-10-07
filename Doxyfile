@@ -1,0 +1,27 @@
+# Doxyfile minimal et optimisé pour le projet C (Concours Manager)
+
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Concours Manager"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Gestion modulaire de concours en langage C"
+
+# Répertoires
+OUTPUT_DIRECTORY       = .
+INPUT                  = .
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */tests/* *.out *.o
+
+# Options d'optimisation pour le C
+OPTIMIZE_OUTPUT_FOR_C  = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# Sortie HTML
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+# Avertissements
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
