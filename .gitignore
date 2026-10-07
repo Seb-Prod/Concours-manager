@@ -1,0 +1,20 @@
+# --- COMPILATION ET EXÉCUTABLES ---
+*.o
+*.out
+*.exe
+programme
+rendu_global.c
+
+# --- FICHIERS DE TESTS TEMPORAIRES ---
+tests/output_brut.txt
+tests/output_actuel.txt
+
+# --- DOCUMENTATION DOXYGEN ---
+html/
+latex/
+
+# --- FICHIERS SYSTÈME ET IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
