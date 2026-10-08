@@ -7,15 +7,16 @@
 #include <stdio.h>
 #include <string.h>
 #include "concours.h"
+#include "affichage.h"
 
 /**
  * \brief Compte le nombre de participants ayant un score non nul dans un concours.
  * \fn static int compter_participants_du_concours(const Application *app, int c)
- * 
+ *
  * \param app Pointeur vers la structure principale de l'application (non NULL).
  * \param c Indice du concours concerné (compris entre 0 et nb_concours - 1).
  * \return Le nombre total de participants ayant un score strictement positif pour ce concours.
- * 
+ *
  * \pre app != NULL
  * \pre c >= 0 && c < app->nb_concours
  */
@@ -38,7 +39,7 @@ static int compter_participants_du_concours(const Application *app, int c)
 /**
  * \brief Recherche un concours existant par son nom.
  * \fn static int touver_concour(const Application *app, const char *nom)
- * 
+ *
  * \param app Pointeur vers la structure principale de l'application.
  * \param nom Nom du concours recherché.
  * \return L'indice du concours dans le tableau s'il est trouvé, ou -1 s'il est inconnu.
@@ -102,9 +103,11 @@ void lister_concours(const Application *app)
 
     for (int i = 0; i < app->nb_concours; i++)
     {
-        printf("(%d) %s : %d participant\n",
+        int nb_participants = compter_participants_du_concours(app, i);
+        printf("(%d) %s : %d participant%s\n",
                i + 1,
                app->concours[i].nom,
-               compter_participants_du_concours(app, i));
+               nb_participants,
+               accord(nb_participants, "", "s"));
     }
 }

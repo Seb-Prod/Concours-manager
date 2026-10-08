@@ -47,7 +47,7 @@ int main()
         {
         case CMD_EXIT:
         {
-            printf("Fermeture du programme...\n");
+            // printf("Fermeture du programme...\n");
             return 0;
         }
 

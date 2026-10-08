@@ -46,6 +46,9 @@ static CommandeType identifier_type_commande(const char *nom_commande)
  */
 int analyser_saisie(char *ligne_saisie, CommandeAnalysee *commande)
 {
+    // Nettoyage immédiat du saut de ligne (\n ou \r\n) s'il est présent
+    ligne_saisie[strcspn(ligne_saisie, "\r\n")] = '\0';
+
     separer_commande_et_arguments(ligne_saisie, &commande->nom, &commande->arguments);
 
     if (commande->nom == NULL)

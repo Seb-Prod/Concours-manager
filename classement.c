@@ -179,11 +179,13 @@ void afficher_comparaison(const Application *app, int id_concours1, int id_conco
 
     if (!a_un_score)
     {
+        printf("%s versus %s\n", app->concours[c2].nom, app->concours[c1].nom);
         printf("Aucun participant\n");
         return;
     }
     if (incompatible)
     {
+        printf("%s versus %s\n", app->concours[c2].nom, app->concours[c1].nom);
         printf("Concours incompatibles\n");
         return;
     }
